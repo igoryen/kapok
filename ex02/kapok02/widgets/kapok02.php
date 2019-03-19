@@ -110,9 +110,21 @@ class Kapok02 extends Widget_Base {
 				'label' => __( 'Title', 'kapok02' ),
 				'type' => Controls_Manager::TEXT,
 			]
+			
+		);
+
+		$this->add_control(
 			'fname',
 			[
 				'label' => __( 'First Name', 'kapok02' ),
+				'type' => Controls_Manager::TEXT,
+			]
+		);
+
+		$this->add_control(
+			'lname',
+			[
+				'label' => __( 'Last Name', 'kapok02' ),
 				'type' => Controls_Manager::TEXT,
 			]
 		);
@@ -142,6 +154,8 @@ class Kapok02 extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
 					'{{WRAPPER}} .fname' => 'text-transform: {{VALUE}};',
+					'{{WRAPPER}} .lname' => 'text-transform: {{VALUE}};',
+
 
 				],
 			]
@@ -170,6 +184,10 @@ class Kapok02 extends Widget_Base {
 		echo $settings['fname'];
 		echo '</div>';
 
+		echo '<div class="lname">';
+		echo $settings['lname'];
+		echo '</div>';
+
 
 	}
 
@@ -184,10 +202,9 @@ class Kapok02 extends Widget_Base {
 	 */
 	protected function _content_template() {
 		?>
-		<div class="title">
-			{{{ settings.title }}}
-		</div>
+		<div class="title">{{{ settings.title }}}</div>
 		<div class="fname">{{{ settings.fname }}}</div>
+		<div class="lname">{{{ settings.lname }}}</div>
 		<?php
 	}
 }
