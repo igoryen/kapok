@@ -184,7 +184,7 @@ class Kapok02 extends Widget_Base {
 		echo $settings['fname'];
 		echo '</div>';
 
-		echo '<div class="lname">';
+		echo '<div id="lastname" class="lname">';
 		echo $settings['lname'];
 		echo '</div>';
 
